@@ -3,8 +3,8 @@
 ## Stack
 
 - Java 17
-- Spring Boot 3.1
-- Gradle 8.2.1
+- Spring Boot 3.2.0
+- Gradle 8.5
 - PostgreSQL
 
 ## Database
