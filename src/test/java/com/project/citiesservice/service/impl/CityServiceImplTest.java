@@ -58,7 +58,7 @@ class CityServiceImplTest {
     @Test
     void testGetUniqueCities_shouldReturnSuccess() {
 
-        when(cityRepository.findAll()).thenReturn(TestData.cities());
+        when(cityRepository.findUniqueCityName()).thenReturn(TestData.cities());
         List<String> actual = cityService
                 .getUniqueCities();
 

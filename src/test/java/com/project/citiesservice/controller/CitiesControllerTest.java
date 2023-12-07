@@ -1,6 +1,5 @@
 package com.project.citiesservice.controller;
 
-import com.project.citiesservice.mapper.CityMapper;
 import com.project.citiesservice.service.impl.CityServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -16,21 +15,18 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(CitiesController.class)
+@WebMvcTest(CitiesControllerImpl.class)
 @ContextConfiguration
 class CitiesControllerTest {
 
     @MockBean
     private CityServiceImpl cityService;
-    @MockBean
-    private CityMapper cityMapper;
 
     @Autowired
     private MockMvc mvc;

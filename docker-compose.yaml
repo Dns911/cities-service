@@ -1,9 +1,9 @@
 version: '1.0'
 
 services:
-  location-service:
-    image: location-service:latest
-    container_name: location-service
+  cities-service:
+    image: cities-service:latest
+    container_name: cities-service
     build:
       context: .
     ports:

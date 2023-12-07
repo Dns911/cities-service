@@ -22,7 +22,6 @@ import java.util.List;
 public class CityServiceImpl implements CityService {
 
     private final CityRepository cityRepository;
-
     private final CityMapper cityMapper;
 
     @Override

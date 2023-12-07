@@ -59,12 +59,11 @@ public class TestData {
                 .build();
     }
 
-    public static List<City> cities(){
-        List<City> cities = new ArrayList<>();
-        cities.add(city1());
-        cities.add(city2());
-        cities.add(city3());
-        cities.add(city4());
+    public static List<String> cities(){
+        List<String> cities = new ArrayList<>();
+        cities.add(city1().getCityName());
+        cities.add(city2().getCityName());
+        cities.add(city3().getCityName());
         return cities;
     }
 }

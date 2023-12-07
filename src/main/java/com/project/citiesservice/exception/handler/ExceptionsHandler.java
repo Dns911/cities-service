@@ -12,6 +12,6 @@ public class ExceptionsHandler {
     @ExceptionHandler(CityNotFoundException.class)
     public ResponseEntity<String> cityNotFound(CityNotFoundException exception) {
 
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(exception.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
     }
 }
