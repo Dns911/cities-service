@@ -1,0 +1,35 @@
+version: '1.0'
+
+services:
+  location-service:
+    image: location-service:latest
+    container_name: location-service
+    build:
+      context: .
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db_cities
+    environment:
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=Den_6394264
+      - DB_HOST=db_cities
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+
+
+  db_cities:
+    container_name: db_cities
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Den_6394264
+      - POSTGRES_DB=db_cities_cont
+    image: postgres:15.4
+
+
+
+

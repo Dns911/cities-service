@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: location-service
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        format_sql: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  datasource:
+#    url: jdbc:postgresql://localhost:5432/location_service_db
+    url: jdbc:postgresql://${DB_HOST}:5432/db_cities_cont
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
+    config-url: /openapi/swagger-config
+    url: /openapi
+    disable-swagger-default-url: true
+  api-docs:
+    path: /openapi
+
+
+server:
+  port: 8080
